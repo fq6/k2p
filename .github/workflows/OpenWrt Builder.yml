@@ -60,16 +60,11 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
-    - name: Setup tmate for SSH
-      uses: mxschmitt/action-tmate@v4
-      with:
-        ssh: true
-
-    - name: Download package
+    - name: Generate .config file
       run: |
         cd openwrt
-        make defconfig
-        make download -j8
+        make defconfig  # 使用默认配置
+        make menuconfig  # 生成自定义配置文件
 
     - name: Compile the firmware
       run: |
