@@ -61,7 +61,7 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: Setup tmate for SSH
-      uses: dtinth/tmate-action@v1
+      uses: mxschmitt/action-tmate@v4
       with:
         ssh: true
 
