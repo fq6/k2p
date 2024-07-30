@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -31,9 +31,8 @@ jobs:
       - name: Generate .config file
         run: |
           cd lede
-          make menuconfig
-          make defconfig
-
+          make defconfig  # 使用默认配置
+          
       - name: Compile LEDE
         run: |
           cd lede
